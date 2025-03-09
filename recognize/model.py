@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 from torchvision.models import resnet18
-from torchvision.transforms import ToTensor, Normalize
 
 class OCRNet(nn.Module):
     '''
@@ -15,7 +14,7 @@ class OCRNet(nn.Module):
         
         # 不使用预训练权重，并且移除resnet的最后两层，仅仅作为特征提取器使用
         # 由于输入图像为单通道，所以修改第一层卷积层的输入通道数
-        resnet = resnet18(pretrained=False)
+        resnet = resnet18(weights=None)
         resnet.conv1 = nn.Conv2d(1, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
         modules = list(resnet.children())[:-2]
         self.feature_extractor = nn.Sequential(*modules)
@@ -53,10 +52,9 @@ class OCRNet(nn.Module):
         features = features.permute(0, 2, 1)
         
         # 序列建模
-        sequence, _ = self.sequence_model(features)
+        sequence, _ = self.lstm(features)
         
         logits = self.prediction_layer(sequence)
         
         return logits
         
-
