@@ -1,6 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
+<<<<<<< HEAD
 const int THE_DIVIDE=24; // 笔画和背景的临界。
 const int MAX_WORD=200; // 最大字所占像素点。
 const int BLOCK=100; //一个字中最大的空白（二）
