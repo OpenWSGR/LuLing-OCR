@@ -170,3 +170,7 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 .vscode
+
+# custom
+train/
+**.otf
