@@ -2,7 +2,6 @@
 #include <iostream>
 using namespace std;
 
-<<<<<<< HEAD
 const int THE_DIVIDE=24; // 笔画和背景的临界。
 const int MAX_WORD=200; // 最大字所占像素点。
 const int BLOCK=100; //一个字中最大的空白（二）
@@ -38,9 +37,9 @@ vector<pair<int,int> >  divide_h(int n,int m,vector<vector<int> > d){
 		for(re j=0;j<m;j++){
 			if(a[i][j]) {ex=j;break;}
 		}
-		if(ex==-1)continue;
+		if(ex==-1) continue;
 		int l=max(ex-MAX_WORD,0),r=min(ex+MAX_WORD,m);
-		int u=i+1,la=i;
+		int u = i + 1, la = i;
 		while(u<n){
 			if(findlr(a[u],l,r)){
 				la=u;u++;continue;
