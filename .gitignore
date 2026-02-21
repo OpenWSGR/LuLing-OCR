@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Model checkpoints & weights
+checkpoints/
+*.pth
+
+# Font files (too large for git, download separately)
+data/fonts/*.otf
+data/fonts/*.ttf
+
+# Old project & archives
+LuLing-OCR/
+*.zip
+*.pdf
+
+# IDE
+.vscode/
+
+# Logs
+logs/
+*.csv
+
+# Sample/debug images
+sample/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Misc
+warmup.py
